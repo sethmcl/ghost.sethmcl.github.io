@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{> sidebar }}
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+
+  <section id="gralak-home-view">
+    {{! Each post will be output using this markup }}
+    {{#posts.[0]}}
+
+    <article class="{{post_class}}">
+        <header class="post-header">
+          <span class="post-meta"><a href="/about">{{author}}</a> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
+          <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+
+        </header>
+        <section class="post-excerpt">
+            <p>{{content words="100"}}&hellip;</p>
+        </section>
+    </article>
+
+    {{/posts.[0]}}
+  </section>
+
+
+  <section id="gralak-writing-view">
+    <h2>Writing</h2>
+
+    {{> postlist }}
+
+  </section>
+
+</main>

@@ -1,0 +1,19 @@
+<div id="gralak-main-body">
+  <nav id="gralak-sidebar">
+    <ul>
+      <li><a href="#about"><img src="{{asset "img/seth.png"}}"></a></li>
+      <li class="link"><a href="#writing">writing</a></li>
+      <li class="link"><a href="#teaching">teaching</a></li>
+      <li class="link"><a href="#speaking">speaking</a></li>
+    </ul>
+  </nav>
+
+  <article id="gralak-main-article">
+    <header>
+      <a href="{{posts.0.url}}"><h1>{{posts.0.title}}</h1></a>
+      <time pubdate="pubdate">{{posts.0.published_at}}</time>
+    </header>
+    {{{posts.0.html}}}
+  </article>
+</div>
+
